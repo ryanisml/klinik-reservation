@@ -1,0 +1,89 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Dokter</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="#">Dokter</a></li>
+            <li class="breadcrumb-item active">Data</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Data Dokter
+                <button type="button" class="btn btn-info btn-xs float-right" data-toggle="modal"
+                        data-target=".bd-example-modal-lg" id="tambahDokter">Tambah Dokter
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataDokter" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>No KTP</th>
+                            <th>Nama Dokter</th>
+                            <th>Status Dokter</th>
+                            <th>Email</th>
+                            <th>Aktif</th>
+                            <th>Aksi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true" id="modalDokter">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="form-dokter">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Dokter</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input name="iddokter" type="hidden" id="iddokter">
+                        <div class="form-group">
+                            <label for="noktp">No. KTP</label>
+                            <input type="number" class="form-control" id="noktp" name="noktp" placeholder="No. KTP">
+                            <div id="errorktp"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Nama Dokter</label>
+                            <input type="nama" class="form-control" id="nama" placeholder="Nama Dokter">
+                        </div>
+                        <div class="form-group">
+                            <label for="status_dokter">Status Dokter</label>
+                            <select class="form-control" id="status_dokter" name="status_dokter">
+                                <option value="Dokter Tetap">Dokter Tetap</option>
+                                <option value="Dokter Pengganti">Dokter Pengganti</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="emaildokter" name="emaildokter"
+                                   placeholder="Email">
+                            <div id="erroremail"></div>
+                            <p>*Password akan dikirim melalui email</p>
+                        </div>
+                        <div class="form-group">
+                            <label for="status_aktif">Status Akun</label>
+                            <select class="form-control" id="status_aktif" name="status_aktif">
+                                <option value="1">Aktif</option>
+                                <option value="0">Tidak Aktif</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="simpandokter" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

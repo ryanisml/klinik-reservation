@@ -1,0 +1,128 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Pasien</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="#">Pasien</a></li>
+            <li class="breadcrumb-item active">Data</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Data Pasien
+                <a href="data-pasien" class="btn btn-info btn-xs float-right">Kembali</a>
+            </div>
+            <div class="card-body">
+                <table class="table table-hover">
+                    <tbody>
+                    <tr>
+                        <th width="150px">No KTP</th>
+                        <td width="30px">:</td>
+                        <td id="noktp"></td>
+                    </tr>
+                    <tr>
+                        <th>No BPJS</th>
+                        <td width="30px">:</td>
+                        <td id="nobpjs"></td>
+                    </tr>
+                    <tr>
+                        <th>Nama Pasien</th>
+                        <td width="30px">:</td>
+                        <td id="namapasien"></td>
+                    </tr>
+                    <tr>
+                        <th>Umur</th>
+                        <td width="30px">:</td>
+                        <td id="umur"></td>
+                    </tr>
+                    <tr>
+                        <th>Alamat</th>
+                        <td width="30px">:</td>
+                        <td id="alamat"></td>
+                    </tr>
+                    <tr>
+                        <th>Nomor Telepon</th>
+                        <td width="30px">:</td>
+                        <td id="notelp"></td>
+                    </tr>
+                    </tbody>
+                </table>
+                <hr>
+                <center><h5>- History Reservasi & Pemeriksaan -</h5></center>
+                <hr>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataPasien" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal Reservasi</th>
+                            <th>Nomor Urut Antrian</th>
+                            <th>Keluhan</th>
+                            <th>Status Reservasi</th>
+                            <th>Aksi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="hasilModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Hasil Pemeriksaan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <td width="200px">Tanggal Reservasi</td>
+                            <td width="10px">:</td>
+                            <td id="modtanggal"></td>
+                        </tr>
+                        <tr>
+                            <td>Nomor Antrian</td>
+                            <td>:</td>
+                            <td id="modnomor"></td>
+                        </tr>
+                        <tr>
+                            <td>Keluhan</td>
+                            <td>:</td>
+                            <td id="modkeluhan"></td>
+                        </tr>
+                        <tr>
+                            <td>Diperiksa Oleh</td>
+                            <td>:</td>
+                            <td id="moddokter"></td>
+                        </tr>
+                        <tr>
+                            <td>Waktu Pemeriksaan</td>
+                            <td>:</td>
+                            <td id="modwaktu"></td>
+                        </tr>
+                        <tr>
+                            <td>Obat</td>
+                            <td>:</td>
+                            <td id="modobat"></td>
+                        </tr>
+                        <tr>
+                            <td>Saran Dokter</td>
+                            <td>:</td>
+                            <td id="modsaran"></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

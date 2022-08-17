@@ -1,0 +1,72 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Tanggal Libur</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="#">Tanggal Libur</a></li>
+            <li class="breadcrumb-item active">Data</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Data Tanggal Libur
+                <button type="button" class="btn btn-info btn-xs float-right" data-toggle="modal"
+                        data-target=".bd-example-modal-lg" id="tambahDokter">Tambah Tanggal Libur
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataDokter" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal Libur</th>
+                            <th>Keterangan</th>
+                            <th>Aksi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true" id="modalDokter">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="form-dokter">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Tanggal Libur</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <input name="iddokter" type="hidden" id="iddokter">
+                        <div class="form-group">
+                            <label for="tanggal_libur">Tanggal Libur</label>
+                            <div class="input-group date">
+                                <input type="text" class="form-control" placeholder="yyyy-mm-dd"
+                                       data-provide="datepicker" data-date-autoclose="true" id="tanggal_libur"
+                                       name="tanggal_libur">
+                                <div class="input-group-append">
+                                    <span class="input-group-text"><i class="fa fa-calendar"></i></span>
+                                </div>
+                            </div>
+                            <div id="errortgllibur"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="nama">Keterangan</label>
+                            <textarea class="form-control" id="keterangan" name="keterangan"></textarea>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" id="simpandokter" class="btn btn-primary">Simpan</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

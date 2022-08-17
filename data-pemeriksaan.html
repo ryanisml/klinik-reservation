@@ -1,0 +1,170 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">Data Pemeriksaan</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="index.html">Pemeriksaan</a></li>
+            <li class="breadcrumb-item active">Antrian</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="row" id="data-antrian">
+                <div class="col-xl-7" style="margin-top: auto; margin-bottom: auto;">
+                    <center><h3>Nomor Antrian Selanjutnya :</h3></center>
+                </div>
+                <div class="col-xl-3"
+                     style="padding-top: 10px; padding-bottom: 10px; margin-top: auto; margin-bottom: auto; padding-right:20px; padding-left:20px;">
+                    <div class="card border-primary">
+                        <div class="card-body">
+                            <center><h1 id="nomor_antrian">0</h1></center>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-2"
+                     style="padding-right:20px; padding-top: 10px; padding-bottom: 10px; padding-left:20px;">
+                    <table width="100%">
+                        <tr class="text-right">
+                            <td>
+                                <button type="button" class="btn btn-success btn-sm col-md-12" id="proses_dokter">Proses
+                                    Ke Dokter
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="text-right">
+                            <td>
+                                <button type="button" class="btn btn-warning btn-sm col-md-12" id="tidak_datang">Tidak
+                                    Datang
+                                </button>
+                            </td>
+                        </tr>
+                        <tr class="text-right">
+                            <td>
+                                <button type="button" class="btn btn-danger btn-sm col-md-12" id="batalkan">Batalkan
+                                </button>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="row" id="data-libur">
+                <div class="col-xl-12" style="padding: 20px;">
+                    <center><h2>Hari Libur</h2></center>
+                    <center><p class="text-danger" id="alasan_libur">Alasan Libur</p></center>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="form-row">
+            <div class="form-group col-md-2" style="margin-top: 5px;">
+                <label><b>Pilih Tanggal</b></label>
+            </div>
+            <div class="form-group col-md-8">
+                <div class="input-group date">
+                    <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-provide="datepicker"
+                           data-date-autoclose="true" id="tanggal">
+                    <div class="input-group-append">
+                        <span class="input-group-text" id="cleartgl" style="cursor: pointer;">Hari ini</span>
+                    </div>
+                </div><!-- input-group -->
+                <p class="small" id="errortoday"></p>
+            </div>
+
+            <div class="form-group col-md-2">
+                <button type="buton" class="btn btn-outline-secondary col-md-12" id="btn_tampilkan">Tampilkan</button>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                List Antrian
+                <button type="button" class="btn btn-primary btn-xs float-right" data-toggle="modal"
+                        data-target=".bd-example-modal-lg" data-backdrop="static" data-keyboard="false"
+                        id="btn_tambah_antrian">Tambah Antrian
+                </button>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tanggal</th>
+                            <th>Nomor Antrian</th>
+                            <th>Nomor KTP</th>
+                            <th>Nama</th>
+                            <th>Umur</th>
+                            <th>Keluhan</th>
+                            <th>Status Reservasi</th>
+                            <th>Aksi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+         aria-hidden="true" id="modalAntrian">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <form id="form-antrian">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Tambah Antrian</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div id="show_error"></div>
+                        <input type="hidden" class="form-control" id="idpasien">
+                        <div class="form-group">
+                            <label for="noktp">No KTP</label>
+                            <div class="input-group">
+                                <input type="number" class="form-control" id="noktp" placeholder="Cari Nomor KTP"
+                                       name="noktp">
+                                <div class="input-group-append">
+                                    <button type="button" class="btn btn-info" id="cariktp">Cari</button>
+                                </div>
+                            </div>
+                            <div id="errorktppasien"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="namapasien">Nama</label>
+                            <input type="text" class="form-control" id="namapasien" placeholder="Nama Pasien">
+                        </div>
+                        <div class="form-group">
+                            <label for="namapasien">Nomor Telepon</label>
+                            <input type="number" class="form-control" id="notelp" placeholder="Nomor Telepon">
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Alamat Pasien</label>
+                            <textarea class="form-control" name="alamatpasien" id="alamatpasien"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Tanggal Lahir</label>
+                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-provide="datepicker"
+                                   data-date-autoclose="true" id="tanggal_lahir">
+
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Keluhan</label>
+                            <textarea class="form-control" name="keluhan" id="keluhan" rows="3"></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="alamat">Tanggal Berobat</label>
+                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-provide="datepicker"
+                                   data-date-autoclose="true" id="tanggal_reservasi">
+                        </div>
+                        <div id="errortgllibur"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-primary" id="btn_simpan_antrian">Simpan</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>

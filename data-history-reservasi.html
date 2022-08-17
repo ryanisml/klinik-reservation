@@ -1,0 +1,82 @@
+<main>
+    <div class="container-fluid">
+        <h1 class="mt-4">History</h1>
+        <ol class="breadcrumb mb-4">
+            <li class="breadcrumb-item"><a href="#">Reservasi</a></li>
+            <li class="breadcrumb-item active">Data</li>
+        </ol>
+        <div class="card mb-4">
+            <div class="card-header">
+                <i class="fas fa-table mr-1"></i>
+                Data History Reservasi
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label for="noktp"><b>Tampilkan Berdasarkan</b></label>
+                    <select class="form-control" id="tampilkan" name="tampilkan">
+                        <option value="1">Tanggal Reservasi</option>
+                        <option value="2">Status Reservasi</option>
+                    </select>
+                </div>
+                <div class="form-row" id="tanggalreservasi">
+                    <div class="form-group col-md-2" style="margin-top: 5px;">
+                        <label>Pilih Tanggal</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <div class="input-group date">
+                            <input type="text" class="form-control" placeholder="yyyy-mm-dd" data-provide="datepicker"
+                                   data-date-autoclose="true" id="tanggal">
+                            <div class="input-group-append">
+                                <span class="input-group-text" id="cleartgl" style="cursor: pointer;">Hari ini</span>
+                            </div>
+                        </div><!-- input-group -->
+                        <p class="small" id="errortoday"></p>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <button type="buton" class="btn btn-outline-secondary col-md-12 btn_tampilkan">Tampilkan
+                        </button>
+                    </div>
+                </div>
+                <div class="form-row" id="statusreservasi">
+                    <div class="form-group col-md-2" style="margin-top: 5px;">
+                        <label>Pilih Status</label>
+                    </div>
+                    <div class="form-group col-md-8">
+                        <select class="form-control" id="status" name="status">
+                            <option value="1">Menunggu Panggilan</option>
+                            <option value="2">Sedang Dipanggil</option>
+                            <option value="3">Tidak Datang</option>
+                            <option value="4">Telah Selesai</option>
+                            <option value="5">Dibatalkan</option>
+                            <option value="0">Gagal load</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group col-md-2">
+                        <button type="buton" class="btn btn-outline-secondary col-md-12 btn_tampilkan">Tampilkan
+                        </button>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataHistory" width="100%" cellspacing="0">
+                        <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th class="text-center">Tanggal</th>
+                            <th class="text-center">Nomor Antrian</th>
+                            <th class="text-center">Nomor KTP</th>
+                            <th class="text-center">Nama</th>
+                            <th class="text-center">Umur</th>
+                            <th class="text-center">Keluhan</th>
+                            <th class="text-center">Status Reservasi</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
