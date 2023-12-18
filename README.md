@@ -1,8 +1,8 @@
 # Klinik Reservation
 This project is linked with :
-[![Web Admin Doctor](https://github.com/ryanisml/klinik-reservation)]
-[![Mobile Doctor Apps](https://github.com/ryanisml/ismailid-dokter-app)]
-[![Mobile Doctor Apps](https://github.com/ryanisml/ismailid-pasien-app)]
+- [Web Admin Doctor](https://github.com/ryanisml/klinik-reservation)
+- [Mobile Doctor Apps](https://github.com/ryanisml/ismailid-dokter-app)
+- [Mobile Doctor Apps](https://github.com/ryanisml/ismailid-pasien-app)
 
 ## Features
 #### Project made with simple MVC PHP and some library :
