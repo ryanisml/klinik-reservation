@@ -9,7 +9,7 @@
         $tanggal = $_POST['tanggal'];
 
         $headers = array(
-            'Authorization: key=AAAA360F3Ig:APA91bEktX44tAP9Tqi9AqAo8eHMjzVHcEEbFENTjhz8-kKg4Kgd1_v3HF8Jem0FRXip-8qQYBupVjC0zQV38u83fI3P9YrSJTd4wOxPEDW7Jp2LmuFAVlZW-uWLJ2JnfabqOz9KsPuC',
+            'Authorization: key=auth_key',
             'Content-Type: application/json'
         );
 
