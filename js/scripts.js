@@ -25,14 +25,14 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-    apiKey: "AIzaSyDwdMqAr7z_1iSrx1oZS12Oqvbz_A0gG1o",
-    authDomain: "ismail-id.firebaseapp.com",
-    databaseURL: "https://ismail-id.firebaseio.com",
-    projectId: "ismail-id",
-    storageBucket: "ismail-id.appspot.com",
-    messagingSenderId: "960680549512",
-    appId: "1:960680549512:web:7cb33e925f1449dbfe533d",
-    measurementId: "G-KFMQPBEQ17"
+    apiKey: "{your api key}",
+    authDomain: "{your firebase domain}",
+    databaseURL: "{your firebase db url}",
+    projectId: "{your project id}",
+    storageBucket: "{your storage firebase id}",
+    messagingSenderId: "{your message notification id}",
+    appId: "{your app id}",
+    measurementId: "{your measurement id}"
 };
 
 var userreal = '';
