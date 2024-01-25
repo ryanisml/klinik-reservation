@@ -65,7 +65,7 @@ $(document).ready(function() {
                         });
                         $.ajax({
                             type: "POST",
-                            url: "send-mail",
+                            url: baseurl+"send-email",
                             data: "emaildokter="+email+"&nama="+nama+"&password="+pass,
                             dataType: 'json',
                             cache: false,

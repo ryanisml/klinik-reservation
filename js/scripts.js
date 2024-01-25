@@ -25,14 +25,14 @@
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 var firebaseConfig = {
-    apiKey: "{your api key}",
-    authDomain: "{your firebase domain}",
-    databaseURL: "{your firebase db url}",
-    projectId: "{your project id}",
-    storageBucket: "{your storage firebase id}",
-    messagingSenderId: "{your message notification id}",
-    appId: "{your app id}",
-    measurementId: "{your measurement id}"
+    apiKey: apiKey,
+    authDomain: authDomain,
+    databaseURL: databaseURL,
+    projectId: projectId,
+    storageBucket: storageBucket,
+    messagingSenderId: messagingSenderId,
+    appId: appId,
+    measurementId: measurementId
 };
 
 var userreal = '';
