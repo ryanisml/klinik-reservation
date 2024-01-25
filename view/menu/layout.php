@@ -195,10 +195,10 @@
             </footer>
         </div>
     </div>
-    <script src="<?= base_url ?>js/firebase-script.js"></script>
+    <script src="<?= base_url ?>assets/script/firebase-script.js"></script>
     <script src="<?= base_url ?>assets/jquery/jquery-3.5.1.min.js"></script>
     <script src="<?= base_url ?>assets/jquery/jquery-ui.min.js"></script>
-    <script src="<?= base_url ?>js/scripts.js"></script>
+    <script src="<?= base_url ?>assets/script/scripts.js"></script>
     <script src="<?= base_url ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url ?>assets/dataTables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url ?>assets/dataTables/dataTables.bootstrap4.min.js"></script>

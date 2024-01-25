@@ -9,7 +9,7 @@ class HistoryController {
             'active' => 'pasien',
             'ipaddress' => $ipaddress,
             'jsfile' => array(
-                'js/script-history-pasien.js'
+                'assets/script/script-history-pasien.js'
             ),
             'view' => 'history/history-pasien.html'
         );
@@ -26,7 +26,7 @@ class HistoryController {
             'ipaddress' => $ipaddress,
             'jsfile' => array(
                 'assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-                'js/script-history-reservasi.js'
+                'assets/script/script-history-reservasi.js'
             ),
             'cssfile' => array(
                 'assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css'
@@ -46,7 +46,7 @@ class HistoryController {
             'ipaddress' => $ipaddress,
             'jsfile' => array(
                 'assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-                'js/script-history-pemeriksaan.js'
+                'assets/script/script-history-pemeriksaan.js'
             ),
             'cssfile' => array(
                 'assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css'

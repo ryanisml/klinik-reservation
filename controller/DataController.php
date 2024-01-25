@@ -11,7 +11,7 @@ class DataController {
             'jsfile' => array(
                 'assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
                 'assets/chartjs/Chart.min.js',
-                'js/script-dashboard.js'
+                'assets/script/script-dashboard.js'
             ),
             'cssfile' => array(
                 'assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css'
@@ -30,7 +30,7 @@ class DataController {
             'active' => 'data-dokter',
             'ipaddress' => $ipaddress,
             'jsfile' => array(
-                'js/script-dokter.js'
+                'assets/script/script-dokter.js'
             ),
             'view' => 'data/data-dokter.html'
         );
@@ -46,7 +46,7 @@ class DataController {
             'active' => 'data-pasien',
             'ipaddress' => $ipaddress,
             'jsfile' => array(
-                'js/script-pasien.js'
+                'assets/script/script-pasien.js'
             ),
             'view' => 'data/data-pasien.html'
         );
@@ -63,7 +63,7 @@ class DataController {
             'ipaddress' => $ipaddress,
             'jsfile' => array(
                 'assets/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
-                'js/script-tanggal-libur.js'
+                'assets/script/script-tanggal-libur.js'
             ),
             'cssfile' => array(
                 'assets/bootstrap-datepicker/css/bootstrap-datepicker.min.css'
