@@ -202,7 +202,7 @@
     <script src="<?= base_url ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="<?= base_url ?>assets/dataTables/jquery.dataTables.min.js"></script>
     <script src="<?= base_url ?>assets/dataTables/dataTables.bootstrap4.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="<?= base_url ?>assets/swal/sweet-alert-2_10.js"></script>
     <?php
     if (isset($jsfile)) {
         foreach ($jsfile as $row) {
