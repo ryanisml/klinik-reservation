@@ -3,7 +3,7 @@ define('auth_key', 'AAAA360F3Ig:APA91bEktX44tAP9Tqi9AqAo8eHMjzVHcEEbFENTjhz8-kKg
 
 class NotificationController {
     public function sendDokter(){
-        if ($_POST['idfirebase'] != null) {
+        if (isset($_POST['idfirebase'])) {
             $fcmUrl = 'https://fcm.googleapis.com/fcm/send';
         
             $idfirebase = $_POST['idfirebase'];
@@ -43,7 +43,7 @@ class NotificationController {
     }
 
     public function sendPasien() {
-        if ($_POST['idreservasi'] != null) {
+        if (isset($_POST['idreservasi'])) {
             $fcmUrl = 'https://fcm.googleapis.com/fcm/send';
     
             $idreservasi = $_POST['idreservasi'];
@@ -102,7 +102,7 @@ class NotificationController {
     }
 
     public function sendAdmin() {
-        if ($_POST['token'] != null) {
+        if (isset($_POST['token'])) {
             $url = "https://fcm.googleapis.com/fcm/send";
     
             $mysite = "http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?').'/';

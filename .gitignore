@@ -1,2 +1,4 @@
 .env
 assets/script/firebase-script.js
+vendor/
+composer.lock
