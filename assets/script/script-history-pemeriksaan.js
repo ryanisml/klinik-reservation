@@ -330,7 +330,7 @@ $("#dataTable").on("click", ".tidak_datang", function() {
 function show_ajax_notif(idfirebase, noantrian, noktp, tanggal){
 	$.ajax({
         type: "POST",
-        url: "notification-dokter",
+        url: baseurl+"notification-dokter",
         data: "idfirebase="+idfirebase+"&noantrian="+noantrian+"&noktp="+noktp+"&tanggal="+tanggal,
         dataType: 'json',
         cache: false,
