@@ -16,16 +16,29 @@ This project is linked with :
 Just put all folder inside xampp or iis.
 
 ## Configuration
-You can change firebase configuration to anything you want. Replace :
+- Add file inside `assets/script` with name `firebase-script.js`
+- Create new const variable with configuration as your own firebase config below:
+```
+const apiKey = ""
+const authDomain = ""
+const databaseURL = ""
+const projectId = ""
+const storageBucket = ""
+const messagingSenderId = ""
+const appId = ""
+const measurementId = ""
+```
+
+After saving `firebase-script.js` your `scripts.js` will work automatically.
 ```
 var firebaseConfig = {
-    apiKey: "{your api key}",
-    authDomain: "{your firebase domain}",
-    databaseURL: "{your firebase db url}",
-    projectId: "{your project id}",
-    storageBucket: "{your storage firebase id}",
-    messagingSenderId: "{your message notification id}",
-    appId: "{your app id}",
-    measurementId: "{your measurement id}"
+    apiKey: apiKey,
+    authDomain: authDomain,
+    databaseURL: databaseURL,
+    projectId: projectId,
+    storageBucket: storageBucket,
+    messagingSenderId: messagingSenderId,
+    appId: appId,
+    measurementId: measurementId
 };
 ```
