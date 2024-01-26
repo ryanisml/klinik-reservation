@@ -74,3 +74,14 @@ var firebaseConfig = {
     measurementId: measurementId
 };
 ```
+
+## Authentication
+This is an login user you can use for test :
+```
+username : ryanisml@gmail.com
+password : 1234567890
+```
+
+## Documentation
+If you have any question related to this project, feel free to contact me at my github <br/>
+[My Github Profile](https://github.com/ryanisml)
