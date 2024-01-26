@@ -78,7 +78,7 @@ class DataController {
         $result['error'] = false;
         if ($_GET['method'] != null) {
             $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, 'https://data.covid19.go.id/public/api/update.json');
+            curl_setopt($ch, CURLOPT_URL, 'https://api.waqi.info/feed/samarinda/?token='.$_ENV['TOKEN_AIR_QUALITY']);
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
             curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
             curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

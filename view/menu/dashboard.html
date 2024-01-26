@@ -162,13 +162,32 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-chart-area mr-1"></i>
-                        Update Covid <b>Indonesia</b>
+                        Update AQI <b>Samarinda, Indonesia</b>
                     </div>
                     <div class="card-body">
-                        <canvas id="myPieChart" width="100%" height="70"></canvas>
+                        <div id="data-aqi" style="display: none;">
+                            <table class="table table-sm table-bordered">
+                                <tr>
+                                    <td>From</td>
+                                    <td>:</td>
+                                    <td id="aqi_from"></td>
+                                </tr>
+                                <tr>
+                                    <td>AQI</td>
+                                    <td>:</td>
+                                    <td id="aqi"></td>
+                                </tr>
+                                <tr>
+                                    <td>Index</td>
+                                    <td>:</td>
+                                    <td id="aqi_index"></td>
+                                </tr>
+                            </table>
+                        </div>
+                        <canvas id="myLineChart" width="100%" height="70"></canvas>
                         <div id="loading-covid" class="text-center"><br/><h5>Harap Tunggu . . .</h5><br/></div>
                         <div id="error-covid" class="text-center"></div>
-                        <center><small><i><b>Referensi:</b> <a href="https://data.covid19.go.id/public/api/update.json" target="_blank">https://data.covid19.go.id/</a></i></small></center>
+                        <center><small><i><b>Referensi:</b> <a href="https://waqi.info/id/" target="_blank">Air Quality Index</a></i></small></center>
                     </div>
                 </div>
             </div>

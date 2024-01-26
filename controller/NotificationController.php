@@ -1,5 +1,4 @@
 <?php
-define('auth_key', $_ENV['FIREBASE_API_KEY']);
 
 class NotificationController {
     public function sendDokter(){
@@ -21,7 +20,7 @@ class NotificationController {
             );
         
             $headers = array(
-                'Authorization: key=' . auth_key,
+                'Authorization: key=' . $_ENV['FIREBASE_API_KEY'],
                 'Content-Type: application/json'
             );
         
@@ -53,7 +52,7 @@ class NotificationController {
             $tanggal = $_POST['tanggal'];
     
             $headers = array(
-                'Authorization: key=' . auth_key,
+                'Authorization: key=' . $_ENV['FIREBASE_API_KEY'],
                 'Content-Type: application/json'
             );
     
@@ -108,7 +107,7 @@ class NotificationController {
             $mysite = "http://".$_SERVER['SERVER_NAME'].dirname($_SERVER["REQUEST_URI"].'?').'/';
     
             $headers = array(
-                'Authorization: key=' . auth_key,
+                'Authorization: key=' . $_ENV['FIREBASE_API_KEY'],
                 'Content-Type: application/json'
             );
     

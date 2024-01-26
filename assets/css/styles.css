@@ -10274,3 +10274,11 @@ body {
   -o-background-size: cover;
   background-size: cover;
 }
+
+#myBarChart {
+  height: 400px;
+}
+
+#myLineChart {
+  height: 350px;
+}

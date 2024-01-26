@@ -67,86 +67,129 @@ $(document).ready(function() {
   var strbulan = monthNames[d.getMonth()];
   $('#thismonth').text(strbulan);
 
-  tbreservasi
-  .where('tanggal_reservasi', '>=', getFirstDay(d.getFullYear(), d.getMonth()))
-  .where('tanggal_reservasi', '<=', getLastDay(d.getFullYear(), d.getMonth()))
-  .orderBy('tanggal_reservasi')
-  .get("tanggal_reservasi").then(function (querySnapshot) {
-      if (querySnapshot.empty == false) {
-          var my_arr = []
-          for (var i = 0; i < querySnapshot.size; i++) {
-            my_arr.push(querySnapshot.docs[i].data().tanggal_reservasi);
-          }
-          result = my_arr.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
-
-          ttle = 'Total Reservasi Selama Bulan '+strbulan;
-          show_bar_chart(ttle, Object.keys(result), Object.values(result));
-      }
-  });
-
-// $.getJSON('https://data.covid19.go.id/public/api/update.json')
-//   .done(function( jdata ) {
-//     console.log( "JSON Data: " + jdata );
-//   })
-//   .fail(function( jqxhr, textStatus, error ) {
-//     var err = textStatus + ", " + error;
-//     console.log( "Request Failed: " + err );
-// });
-
-var ctx = document.getElementById("myPieChart");
-$('#myPieChart').css('display', 'none');
-function generate_data_covid(data){
-  $('#myPieChart').css('display', 'block');
-  colors=[];
-  keyval = get_key(data);
-  for(let i=0;i<this.keyval.length;i++){
-        this.colors.push('#'+Math.floor(Math.random()*16777215).toString(16));
-  }
-  var myPieChart = new Chart(ctx, {
-    type: 'pie',
-    data: {
-      labels: keyval,
-      datasets: [{
-        data: get_data(data),
-        backgroundColor: this.colors,
-      }],
-    },
-    options: {
-        responsive: true,
-        legend: {
-            position: 'top',
-        },
-        title: {
-            display: true,
-            text: 'Data Covid Harian per '+data.created
-        },
-        animation: {
-            animateScale: true,
-            animateRotate: true
+tbreservasi
+.where('tanggal_reservasi', '>=', getFirstDay(d.getFullYear(), d.getMonth()))
+.where('tanggal_reservasi', '<=', getLastDay(d.getFullYear(), d.getMonth()))
+.orderBy('tanggal_reservasi')
+.get("tanggal_reservasi").then(function (querySnapshot) {
+    if (querySnapshot.empty == false) {
+        var my_arr = []
+        for (var i = 0; i < querySnapshot.size; i++) {
+          my_arr.push(querySnapshot.docs[i].data().tanggal_reservasi);
         }
+        result = my_arr.reduce((a, c) => (a[c] = (a[c] || 0) + 1, a), Object.create(null));
+
+        ttle = 'Total Reservasi Selama Bulan '+strbulan;
+        show_bar_chart(ttle, Object.keys(result), Object.values(result));
+    }
+});
+
+var ctx = document.getElementById("myLineChart");
+$('#myLineChart').css('display', 'none');
+$('#data-aqi').css('display', 'none');
+function generate_data_aqi(data){
+  $('#myLineChart').css('display', 'block');
+  $('#data-aqi').css('display', 'block');
+  $('#aqi_from').text(data.attributions[0].name);
+  $('#aqi').text(data.aqi);
+  $('#aqi_index').text(data.idx);
+  
+  var ctx = document.getElementById("myLineChart");
+  var myLineChart = new Chart(ctx, {
+    type: 'line',
+    data: get_data_chart(data),
+    options: {
+      responsive: true,
+      maintainAspectRatio: true,
+      title: {
+          display: true,
+          text: 'Forecast AQI'
+      }
     }
   });
+}
+
+function get_data_chart(data){
+  var keyval = [];
+  var keyval2 = [];
+  var keyval3 = [];
+  $.each(data.forecast.daily.pm10, function(k, v) {
+    keyval.push(v.avg);
+    keyval2.push(v.max);
+    keyval3.push(v.min);
+  });
+  return {
+    labels: get_key(data.forecast.daily.pm10),
+    datasets: [{
+      label: "Average",
+      lineTension: 0.3,
+      backgroundColor: "rgba(78, 115, 223, 0.05)",
+      borderColor: "#007bff",
+      pointRadius: 3,
+      pointBackgroundColor: "#007bff",
+      pointBorderColor: "#007bff",
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: "#007bff",
+      pointHoverBorderColor: "#007bff",
+      pointHitRadius: 10,
+      pointBorderWidth: 2,
+      data: keyval,
+    },{
+      label: "Maximum",
+      lineTension: 0.3,
+      backgroundColor: "rgba(78, 115, 223, 0.05)",
+      borderColor: "#dc3545",
+      pointRadius: 3,
+      pointBackgroundColor: "#dc3545",
+      pointBorderColor: "#dc3545",
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: "#dc3545",
+      pointHoverBorderColor: "#dc3545",
+      pointHitRadius: 10,
+      pointBorderWidth: 2,
+      data: keyval2,
+    },{
+      label: "Minimum",
+      lineTension: 0.3,
+      backgroundColor: "rgba(78, 115, 223, 0.05)",
+      borderColor: "#ffc107",
+      pointRadius: 3,
+      pointBackgroundColor: "#ffc107",
+      pointBorderColor: "#ffc107",
+      pointHoverRadius: 3,
+      pointHoverBackgroundColor: "#ffc107",
+      pointHoverBorderColor: "#ffc107",
+      pointHitRadius: 10,
+      pointBorderWidth: 2,
+      data: keyval3,
+    }],
+  };
 }
 
 function get_key(data){
-  const datakey = [];
+  var keyval = [];
   $.each(data, function(k, v) {
-    if (k !== 'tanggal' && k !== 'created') {
-      datakey.push(k);      
-    }
+    keyval.push(v.day);
   });
-  return datakey;
+  return keyval;
 }
+// function get_key(data){
+//   var keyval = [];
+//   $.each(data, function(k, v) {
+//     // keyval.push(k);
+//     keyval.push(v.day);
+//   });
+//   return keyval;
+// }
 
-function get_data(data){
-  const datakey = [];
-  $.each(data, function(k, v) {
-    if (k !== 'tanggal' && k !== 'created') {
-      datakey.push(v);      
-    }
-  });
-  return datakey;
-}
+// function get_data(data){
+//   var keyval = [];
+//   $.each(data, function(k, v) {
+//     // keyval.push(v);
+//     keyval.push(v.avg);
+//   });
+//   return keyval;
+// }
 
 $.ajax({
     type: "GET",
@@ -157,7 +200,7 @@ $.ajax({
     success: function( response ) {
         $('#loading-covid').html('');
         $('#error-covid').html('');
-        generate_data_covid(response.update.penambahan);
+        generate_data_aqi(response.data);
     },
     error: function (jqXHR, exception) {
         $('#error-covid').css('display', 'block');
@@ -179,7 +222,7 @@ $.ajax({
         }
         $('#error-covid').html('<br/><h5>'+msg+'</h5><br/>');
         $('#loading-covid').html('');
-        $('#myPieChart').css('display', 'none');
+        $('#myLineChart').css('display', 'none');
     }
 });
 
@@ -226,37 +269,6 @@ $.ajax({
     } else {
         $('#error_pinggul').html('')
     }
-
-    // const data = JSON.stringify({
-    //   "weight": {
-    //     "value": berat,
-    //     "unit": "kg"
-    //   },
-    //   "height": {
-    //     "value": tinggi,
-    //     "unit": "cm"
-    //   },
-    //   "sex": kelamin,
-    //   "age": umur,
-    //   "waist": pinggang,
-    //   "hip": pinggul
-    // });
-
-    // const xhr = new XMLHttpRequest();
-    // xhr.withCredentials = true;
-
-    // xhr.addEventListener("readystatechange", function () {
-    //   if (this.readyState === this.DONE) {
-    //     console.log(this.responseText);
-    //   }
-    //   $("#btnBMI").prop( "disabled", false);
-    // });
-
-    // xhr.open("POST", "https://bmi.p.rapidapi.com/");
-    // xhr.setRequestHeader("content-type", "application/json");
-    // xhr.setRequestHeader("x-rapidapi-host", "bmi.p.rapidapi.com");
-
-    // xhr.send(data);
   });
 
   tblog.orderBy('waktu_log').onSnapshot(function(snapshot) {
@@ -292,4 +304,54 @@ function getLastDay(tahun, bulan) {
   var year = today.getFullYear();
 
   return year + "-" + month + "-" + date;
+}
+
+function show_bar_chart(title, label, data){
+  var ctx = document.getElementById("myBarChart");
+  var myLineChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: label,
+      datasets: [{
+        label: "Jumlah Reservasi",
+        backgroundColor: "#007bff",
+        borderColor: "#007bff",
+        data: data,
+      }],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      title: {
+          display: true,
+          text: title
+      },
+      scales: {
+        xAxes: [{
+          time: {
+            unit: 'day'
+          },
+          gridLines: {
+            display: false
+          },
+          ticks: {
+            maxTicksLimit: 31
+          }
+        }],
+        yAxes: [{
+          ticks: {
+            min: 0,
+            max: 20,
+            maxTicksLimit: 20
+          },
+          gridLines: {
+            display: true
+          }
+        }],
+      },
+      legend: {
+        display: false
+      }
+    }
+  });
 }
