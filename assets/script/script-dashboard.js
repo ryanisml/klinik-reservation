@@ -173,23 +173,6 @@ function get_key(data){
   });
   return keyval;
 }
-// function get_key(data){
-//   var keyval = [];
-//   $.each(data, function(k, v) {
-//     // keyval.push(k);
-//     keyval.push(v.day);
-//   });
-//   return keyval;
-// }
-
-// function get_data(data){
-//   var keyval = [];
-//   $.each(data, function(k, v) {
-//     // keyval.push(v);
-//     keyval.push(v.avg);
-//   });
-//   return keyval;
-// }
 
 $.ajax({
     type: "GET",
@@ -200,7 +183,15 @@ $.ajax({
     success: function( response ) {
         $('#loading-covid').html('');
         $('#error-covid').html('');
-        generate_data_aqi(response.data);
+        if(response.status == 'ok'){
+            $('#error-covid').css('display', 'none');
+            $('#myLineChart').css('display', 'block');
+            generate_data_aqi(response.data);
+        }else{
+            $('#error-covid').css('display', 'block');
+            $('#error-covid').html('<br/><h5>'+response.message+'</h5><br/>');
+            $('#myLineChart').css('display', 'none');
+        }
     },
     error: function (jqXHR, exception) {
         $('#error-covid').css('display', 'block');
