@@ -6,16 +6,16 @@ class NotificationController {
             $fcmUrl = 'https://fcm.googleapis.com/fcm/send';
         
             $idfirebase = $_POST['idfirebase'];
-            // $noantrian = $_POST['noantrian'];
-            // $noktp = $_POST['noktp'];
-            // $tanggal = $_POST['tanggal'];
+            $noantrian = $_POST['noantrian'];
+            $noktp = $_POST['noktp'];
+            $tanggal = $_POST['tanggal'];
         
             $fields = array(
                 'to' => '/topics/pasien-hadir',
                 "data" => array(
                     "iduser" => $idfirebase,
-                    // "body" => 'Pasien dgn no antrian ' . $noantrian . ' tgl periksa ' . $tanggal . ' telah datang.',
-                    "body" => 'Pasien dgn no antrian telah datang.',
+                    "body" => 'Pasien dgn no antrian ' . $noantrian . ' tgl periksa ' . $tanggal . ' telah datang.',
+                    // "body" => 'Pasien dgn no antrian telah datang.',
                     "title" => 'Pemberitahuan pasien datang',
                 )
             );
