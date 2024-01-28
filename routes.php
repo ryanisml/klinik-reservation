@@ -14,6 +14,10 @@ $routes = [
     '/data-dokter' => 'DataController@dokter',
     '/data-pasien' => 'DataController@pasien',
     '/data-tanggal-libur' => 'DataController@tanggalLibur',
+    '/privacy/dokter' => 'PrivacyController@PrivacyDokter',
+    '/privacy/pasien' => 'PrivacyController@PrivacyPasien',
+    '/terms/dokter' => 'PrivacyController@DokterTerms',
+    '/terms/pasien' => 'PrivacyController@PasienTerms',
 ];
 
 return $routes;

@@ -11,6 +11,7 @@ require_once 'controller/NotificationController.php';
 require_once 'controller/DataController.php';
 require_once 'controller/HistoryController.php';
 require_once 'controller/ErrorController.php';
+require_once 'controller/PrivacyController.php';
 
 $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
 $dotenv->load();
