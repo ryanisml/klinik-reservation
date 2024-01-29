@@ -18,6 +18,7 @@
         </div>
         <script src="assets/jquery/jquery-3.5.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/firebase-script.js"></script>
         <script>
             const base_url = '<?= base_url ?>';
             // Your web app's Firebase configuration
