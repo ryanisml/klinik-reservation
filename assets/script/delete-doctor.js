@@ -23,9 +23,6 @@ $('#btn-delete').click(function () {
     request_deletion(noktp, nama);
 });
 
-firebase.initializeApp(firebaseConfig);
-firebase.analytics();
-
 var db = firebase.firestore();
 
 function request_deletion(noktp, nama){
