@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
     // Inisiasi nama tabel
     var tbdokter = db.collection("tb_dokter");
     var dataSet = [];

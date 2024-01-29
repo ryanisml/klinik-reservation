@@ -7,7 +7,6 @@ class NotificationController {
         
             $idfirebase = $_POST['idfirebase'];
             $noantrian = $_POST['noantrian'];
-            $noktp = $_POST['noktp'];
             $tanggal = $_POST['tanggal'];
         
             $fields = array(
