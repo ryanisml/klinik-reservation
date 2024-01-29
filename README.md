@@ -4,7 +4,7 @@
 #### This is an example website admin reservation for clinic reservation.
 
 This project is linked with :
-- [Web Admin Reservation](https://github.com/ryanisml/klinik-reservation) -> your are here
+- [Web Clinic Reservation](https://github.com/ryanisml/klinik-reservation) -> your are here
 - [Mobile Doctor Apps](https://github.com/ryanisml/ismailid-dokter-app)
 - [Mobile Patient Apps](https://github.com/ryanisml/ismailid-pasien-app)
 
