@@ -11,6 +11,9 @@
         <link href="<?= base_url ?>assets/css/styles.css" rel="stylesheet" />
         <link href="<?= base_url ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
         <script src="<?= base_url ?>assets/js/all.min.js" crossorigin="anonymous"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-auth.js"></script>
     </head>
     <body>
         <div class="container mt-5">
