@@ -29,6 +29,7 @@ function request_deletion(noktp, nama){
         if (querySnapshot.empty) {
             $('#message').html('<div class="alert alert-info alert-dismissible fade show" role="alert"><strong>Oops!</strong> Nomor KTP Tidak Ditemukan.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
             $("#btn-delete").prop( "disabled", false);
+            $('#btn-delete').html('Submit Request');
         }else{
             querySnapshot.forEach(function (doc) {
                 var data = doc.data();
@@ -38,6 +39,7 @@ function request_deletion(noktp, nama){
                 }else{
                     $('#message').html('<div class="alert alert-info alert-dismissible fade show" role="alert"><strong>Oops!</strong> Nama dokter yang anda masukkan salah.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
                     $("#btn-delete").prop( "disabled", false);
+                    $('#btn-delete').html('Submit Request');
                 }
             });
         }
@@ -55,8 +57,10 @@ function delete_data(id, noktp){
     }).then(function (docRef) {
         $('#message').html('<div class="alert alert-success alert-dismissible fade show" role="alert"><strong>Berhasil!</strong> Harap tunggu, akun anda akan di hapus dari sistem ini dalam 30 hari kedepan.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         $("#btn-delete").prop( "disabled", false);
+        $('#btn-delete').html('Submit Request');
     }).catch(function (error) {
         $('#message').html('<div class="alert alert-info alert-dismissible fade show" role="alert"><strong>Gagal!</strong> Terjadi kesalahan dalam aplikasi.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
         $("#btn-delete").prop( "disabled", false);
+        $('#btn-delete').html('Submit Request');
     });
 }
