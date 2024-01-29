@@ -20,8 +20,6 @@ $routes = [
     '/terms/pasien' => 'PrivacyController@PasienTerms',
     '/delete-dokter' => 'DeleteController@deleteDokter',
     '/delete-pasien' => 'DeleteController@deletePasien',
-    '/delete-dokter-process' => 'DeleteController@deleteDokterProcess',
-    '/delete-pasien-process' => 'DeleteController@deletePasienProcess',
 ];
 
 return $routes;

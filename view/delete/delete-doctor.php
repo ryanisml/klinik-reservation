@@ -5,7 +5,7 @@
         <div id="message"></div>
 
         <div class="alert alert-info alert-dismissible fade show" role="alert">
-            <strong>Konfirmasi!</strong> Mohon untuk mengisikan nama dan nomor ktp yang anda daftarkan. Jika data anda benar, kami akan menghapus data anda secepatnya.
+            <strong>Konfirmasi!</strong><br/>Mohon untuk mengisikan nama dan nomor ktp yang anda daftarkan. Jika data anda benar, kami akan menghapus data anda secepatnya.
             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                 <span aria-hidden="true">&times;</span>
             </button>
@@ -22,7 +22,7 @@
                 <input type="text" class="form-control" id="nama" placeholder="Masukkan Nama Dokter">
                 <div class="error-nama"></div>
             </div>
-            <div class="form-check">
+            <div class="form-check text-right mt-3 mb-3">
                 <input type="checkbox" class="form-check-input" id="checklist">
                 <label class="form-check-label" for="checklist">Confirmation Of Deletion</label>
                 <div class="error-confirmation"></div>

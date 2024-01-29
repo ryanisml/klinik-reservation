@@ -5,7 +5,7 @@ class DeleteController {
 
     public function deleteDokter() {
         $data = array(
-            'title' => 'Delete Dokter Data',
+            'title' => 'Hapus Data Dokter',
             'view' => 'delete-doctor.php',
             'script' => 'delete-doctor.js'
         );
@@ -15,7 +15,7 @@ class DeleteController {
 
     public function deletePasien() {
         $data = array(
-            'title' => 'Delete Pasien Data',
+            'title' => 'Hapus Data Pasien',
             'view' => 'delete-patient.php',
             'script' => 'delete-patient.js'
         );

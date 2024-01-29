@@ -13,11 +13,29 @@
         <script src="<?= base_url ?>assets/js/all.min.js" crossorigin="anonymous"></script>
     </head>
     <body>
-        <div class="container">
+        <div class="container mt-5">
             <?php require_once $view; ?>
         </div>
         <script src="assets/jquery/jquery-3.5.1.min.js"></script>
         <script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script>
+            const base_url = '<?= base_url ?>';
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: apiKey,
+                authDomain: authDomain,
+                databaseURL: databaseURL,
+                projectId: projectId,
+                storageBucket: storageBucket,
+                messagingSenderId: messagingSenderId,
+                appId: appId,
+                measurementId: measurementId
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
         <?php if (isset($script)): ?>
         <script src="<?= base_url ?>assets/js/<?= $script ?>"></script>
         <?php endif; ?>
