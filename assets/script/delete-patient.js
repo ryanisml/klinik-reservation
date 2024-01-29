@@ -6,17 +6,16 @@ $('#btn-delete').click(function () {
 
     var noktp = $.trim($('#noktp').val());
     var nama = $.trim($('#nama').val());
-    var confirmation = $.trim($('#confirmation').val());
     if (noktp == '') {
-        $('#error-noktp').html('Nomor KTP harus diisi.');
+        $('#error-noktp').html('<small class="text-danger">Nomor KTP harus diisi.</small>');
         return;
     }
     if (nama == '') {
-        $('#error-nama').html('Nama pasien harus diisi.');
+        $('#error-nama').html('<small class="text-danger">Nama pasien harus diisi.</small>');
         return;
     }
-    if (confirmation == '') {
-        $('#error-confirmation').html('Konfirmasi persetujuan harus diisi.');
+    if ($('#checklist').is(':checked') == false){
+        $('#error-confirmation').html('<small class="text-danger">Konfirmasi persetujuan harus diisi.</small>');
         return;
     }
     $("#btn-delete").prop( "disabled", true);
