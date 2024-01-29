@@ -23,6 +23,11 @@ $('#btn-delete').click(function () {
     request_deletion(noktp, nama);
 });
 
+firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+var db = firebase.firestore();
+
 function request_deletion(noktp, nama){
     var tbdokter = db.collection("tb_dokter");
     tbdokter.where('noktp', '==', noktp).get().then(function (querySnapshot) {
@@ -43,6 +48,10 @@ function request_deletion(noktp, nama){
                 }
             });
         }
+    }).catch(function (error) {
+        $('#message').html('<div class="alert alert-info alert-dismissible fade show" role="alert"><strong>Gagal!</strong> Terjadi kesalahan dalam aplikasi.<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>');
+        $("#btn-delete").prop( "disabled", false);
+        $('#btn-delete').html('Submit Request');
     });
 }
 
