@@ -18,7 +18,7 @@
         </div>
         <script src="<?= base_url ?>assets/jquery/jquery-3.5.1.min.js"></script>
         <script src="<?= base_url ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>
-        <script src="<?= base_url ?>assets/js/firebase-script.js"></script>
+        <script src="<?= base_url ?>assets/script/firebase-script.js"></script>
         <script>
             const base_url = '<?= base_url ?>';
             // Your web app's Firebase configuration
@@ -38,7 +38,7 @@
             firebase.analytics();
         </script>
         <?php if (isset($script)): ?>
-        <script src="<?= base_url ?>assets/js/<?= $script ?>"></script>
+        <script src="<?= base_url ?>assets/script/<?= $script ?>"></script>
         <?php endif; ?>
     </body>
 </html>
